@@ -1,0 +1,7 @@
+<app-sidebar #sidenav [mobileQuery]="mobileQuery">
+  <app-topbar
+    [mobileQuery]="mobileQuery"
+    (openClose)="sidenav.toggle()"
+  ></app-topbar>
+  <router-outlet></router-outlet>
+</app-sidebar>

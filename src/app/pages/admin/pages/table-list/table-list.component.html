@@ -1,0 +1,87 @@
+<div class="grid grid-flow-row gap-y-20 px-4 pt-16">
+  <mat-card>
+    <mat-card-header class="bg-red-500 text-white -mt-8 rounded pt-5">
+      <mat-card-title class="font-light">Simple Table</mat-card-title>
+      <mat-card-subtitle class="text-grey-200"
+        >Here is a subtitle for this table
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content class="px-3"
+      ><table mat-table [dataSource]="dataSource" class="mt-5 mat-elevation-z0">
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>Id.</th>
+          <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Name</th>
+          <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="country">
+          <th mat-header-cell *matHeaderCellDef>Country</th>
+          <td mat-cell *matCellDef="let element">{{ element.country }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="city">
+          <th mat-header-cell *matHeaderCellDef>City</th>
+          <td mat-cell *matCellDef="let element">{{ element.city }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="salary">
+          <th mat-header-cell *matHeaderCellDef>Ssalary</th>
+          <td mat-cell *matCellDef="let element">{{ element.salary }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="bg-transparent mat-elevation-z0">
+    <mat-card-header class="bg-red-500 text-white -mt-8 rounded pt-5">
+      <mat-card-title class="font-light"
+        >Table on Plain Background</mat-card-title
+      >
+      <mat-card-subtitle class="text-grey-200"
+        >Here is a subtitle for this table
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content class="px-3"
+      ><table mat-table [dataSource]="dataSource" class="mt-5 bg-transparent">
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>Id.</th>
+          <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Name</th>
+          <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="country">
+          <th mat-header-cell *matHeaderCellDef>Country</th>
+          <td mat-cell *matCellDef="let element">{{ element.country }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="city">
+          <th mat-header-cell *matHeaderCellDef>City</th>
+          <td mat-cell *matCellDef="let element">{{ element.city }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="salary">
+          <th mat-header-cell *matHeaderCellDef>Ssalary</th>
+          <td mat-cell *matCellDef="let element">{{ element.salary }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr
+          mat-row
+          class="withHover"
+          *matRowDef="let row; columns: displayedColumns"
+        ></tr>
+      </table>
+    </mat-card-content>
+  </mat-card>
+</div>

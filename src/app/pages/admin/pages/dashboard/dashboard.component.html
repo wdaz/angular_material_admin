@@ -1,0 +1,118 @@
+<div class="grid grid-cols-12 gap-x-4 px-4 pt-16">
+  <mat-card class="col-span-3" *ngFor="let item of firstRow">
+    <mat-card-header class="justify-between">
+      <div mat-card-avatar>
+        <mat-icon
+          class="
+            -mt-10
+            w-24
+            h-24
+            flex
+            justify-center
+            items-center
+            border
+            rounded
+            text-white text-4xl
+          "
+          [class]="item.headerIconColor"
+        >
+          {{ item.headerIcon }}
+        </mat-icon>
+      </div>
+
+      <mat-card-subtitle class="text-right">{{
+        item.subtitle
+      }}</mat-card-subtitle>
+      <mat-card-title class="text-2xl text-right font-light"
+        >{{ item.title }}
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-footer class="px-4 py-2">
+      <div class="border-t flex items-center">
+        <mat-icon class="text-xl" [class]="item.footerIconColor">{{
+          item.footerIcon
+        }}</mat-icon>
+        <span class="pt-2 text-xs text-gray-400"> {{ item.footerText }} </span>
+      </div>
+    </mat-card-footer>
+  </mat-card>
+
+  <mat-card class="col-span-4 mt-16">
+    <mat-card-header class="flex-col">
+      <div
+        mat-card-avatar
+        class="h-full w-full -mt-10 bg-green-600 rounded p-2 pt-4"
+      >
+        <x-chartist
+          [type]="type"
+          [data]="data1"
+          [options]="options"
+        ></x-chartist>
+      </div>
+      <mat-card-title class="text-2xl font-light mt-2 -ml-4">
+        Daily Sales</mat-card-title
+      >
+    </mat-card-header>
+    <mat-card-content>
+      <span class="text-green-400">
+        <mat-icon class="text-sm">north</mat-icon>
+        55%
+      </span>
+      increase in today sales.
+    </mat-card-content>
+    <mat-card-footer class="px-4 py-2">
+      <div class="border-t flex items-center">
+        <mat-icon class="text-xl text-gray-400">access_time</mat-icon>
+        <span class="pt-2 text-xs text-gray-400">updated 4 minutes ago </span>
+      </div>
+    </mat-card-footer>
+  </mat-card>
+
+  <mat-card class="col-span-4 mt-16">
+    <mat-card-header class="flex-col">
+      <div
+        mat-card-avatar
+        class="h-full w-full -mt-10 bg-yellow-500 rounded p-2 pt-4"
+      >
+        <x-chartist type="Bar" [data]="data2" [options]="options3"></x-chartist>
+      </div>
+      <mat-card-title class="text-2xl font-light mt-2 -ml-4">
+        Email Subscriptions</mat-card-title
+      >
+    </mat-card-header>
+    <mat-card-content> Last Campaign Performance </mat-card-content>
+    <mat-card-footer class="px-4 py-2">
+      <div class="border-t flex items-center">
+        <mat-icon class="text-xl text-gray-400">access_time</mat-icon>
+        <span class="pt-2 text-xs text-gray-400">campaign sent 2 days ago</span>
+      </div>
+    </mat-card-footer>
+  </mat-card>
+
+  <mat-card class="col-span-4 mt-16">
+    <mat-card-header class="flex-col">
+      <div
+        mat-card-avatar
+        class="h-full w-full -mt-10 bg-red-500 rounded p-2 pt-4"
+      >
+        <x-chartist
+          [type]="type"
+          [data]="data3"
+          [options]="options3"
+        ></x-chartist>
+      </div>
+      <mat-card-title class="text-2xl font-light mt-2 -ml-4">
+        Completed Tasks
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content> Last Campaign Performance </mat-card-content>
+    <mat-card-footer class="px-4 py-2">
+      <div class="border-t flex items-center">
+        <mat-icon class="text-xl text-gray-400">access_time</mat-icon>
+        <span class="pt-2 text-xs text-gray-400"
+          >campaign sent 2 days ago
+        </span>
+      </div>
+    </mat-card-footer>
+  </mat-card>
+</div>

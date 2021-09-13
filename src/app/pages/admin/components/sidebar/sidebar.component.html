@@ -1,0 +1,50 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav
+    class="mat-elevation-z8"
+    #sidenav
+    [mode]="mobileQuery.matches ? 'over' : 'side'"
+    [(opened)]="mobileQuery.matches ? closed : opened"
+  >
+    <mat-list class="pt-2 px-5">
+      <mat-list-item>
+        <mat-icon mat-list-icon class="text-red-600">pix</mat-icon>
+        <span mat-line class="font-bold">Logo</span>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </mat-list>
+
+    <mat-nav-list class="px-5">
+      <mat-list-item
+        [ngClass]="{ 'bg-red-600': rla.isActive }"
+        *ngFor="let menu of menus"
+        [routerLink]="[menu.path]"
+        routerLinkActive
+        #rla="routerLinkActive"
+        class="rounded my-2"
+      >
+        <mat-icon
+          mat-list-icon
+          [ngClass]="{
+            'text-gray-400': !rla.isActive,
+            'text-white': rla.isActive
+          }"
+          class=""
+          >{{ menu.icon }}</mat-icon
+        >
+        <a matLine>
+          <span
+            [ngClass]="{
+              'text-white': rla.isActive,
+              'text-gray-700': !rla.isActive
+            }"
+          >
+            {{ menu.name }}
+          </span>
+        </a>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="bg-grey-100">
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

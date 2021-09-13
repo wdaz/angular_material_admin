@@ -1,0 +1,14 @@
+::ng-deep .ct-series-a .ct-line,
+::ng-deep .ct-series-a .ct-point,
+::ng-deep .ct-series-a .ct-bar {
+  stroke: white;
+}
+
+::ng-deep .ct-label {
+  color: white;
+}
+
+::ng-deep .ct-grid {
+  stroke: rgb(255, 255, 255);
+  opacity: 0.3;
+}

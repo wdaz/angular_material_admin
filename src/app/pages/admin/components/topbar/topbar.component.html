@@ -1,0 +1,13 @@
+<mat-toolbar>
+  <span>{{ title | async }}</span>
+  <span class="example-spacer"></span>
+  <button
+    [class.hidden]="!mobileQuery.matches"
+    (click)="sideBarToogle()"
+    mat-icon-button
+    class="mr-2 flex"
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>
